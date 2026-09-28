@@ -38,7 +38,7 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   targets.forEach(function (el) { io.observe(el); });
 })();
 
-// Headlines rise in word by word (keeping italic accent words); the hero line cycles through client types
+// Headlines rise in word by word, keeping italic accent words
 (function () {
   if (reduceMotion) return;
 
@@ -64,22 +64,6 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   if (hero) requestAnimationFrame(function () {
     requestAnimationFrame(function () { hero.classList.add('in'); });
   });
-
-  var word = document.querySelector('.rotator-word');
-  if (word) {
-    var words = word.dataset.words.split('|'), i = 0;
-    setInterval(function () {
-      word.classList.add('out');
-      setTimeout(function () {
-        i = (i + 1) % words.length;
-        word.textContent = words[i];
-        word.classList.remove('out');
-        word.classList.add('enter');
-        void word.offsetWidth;
-        word.classList.remove('enter');
-      }, 350);
-    }, 2600);
-  }
 })();
 
 // Home screenshots drift gently with the pointer
