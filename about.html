@@ -5,11 +5,24 @@ description: Anna Andrews is a Chicago-area web designer who runs her own busine
 ---
 <section id="about">
   <div class="wrap about">
-    <h1>Hi, I'm Anna.</h1>
-    <div>
-      <p>I run The Reset Co., a home organizing business in Chicago, so I know what it's like to be the owner who needs a website to actually bring in work. That's the lens I bring to every project.</p>
+    <!-- To add a headshot, replace the contents of .portrait with:
+         <img src="{{ '/assets/img/headshot.jpg' | relative_url }}" alt="Anna Andrews"> -->
+    <figure class="portrait">
+      <div class="portrait-mark" aria-hidden="true">Aa</div>
+      <figcaption>Newsreader &amp; Instrument Sans, the typefaces on this site</figcaption>
+    </figure>
+    <div class="about-copy">
+      <p class="label">About</p>
+      <h1>Hi, I'm <em>Anna.</em></h1>
+      <p class="about-lede">I run The Reset Co., a home organizing business in Chicago, so I know what it's like to be the owner who needs a website to actually bring in work. That's the lens I bring to every project.</p>
       <p>A website isn't decoration. It's often the first conversation a customer has with you, and it should make the next step obvious, whether that's booking a call, making a donation, or signing up for a reunion.</p>
       <p>I work with small businesses, professional firms, and community organizations in the Chicago area and beyond.</p>
+      <dl class="spec about-spec">
+        <div><dt>Based in</dt><dd>Chicago area</dd></div>
+        <div><dt>Also runs</dt><dd>The Reset Co., home organizing</dd></div>
+        <div><dt>Works with</dt><dd>Small businesses, professional firms, community organizations</dd></div>
+        <div><dt>Builds with</dt><dd>Custom code or Squarespace</dd></div>
+      </dl>
     </div>
   </div>
 </section>

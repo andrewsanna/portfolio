@@ -5,10 +5,17 @@ description: Request a quote for a new website, redesign, or ongoing updates.
 ---
 <section id="contact">
   <div class="wrap contact">
-    <div class="sec-head">
-      <h1>Tell me about your project</h1>
+    <div class="contact-intro">
+      <p class="label">Contact</p>
+      <h1>Tell me about <em>your project</em></h1>
       <p>Share a few details and I'll get back to you to set up a free call. No commitment and no pressure.</p>
+      <ol class="next">
+        <li><b>You send a note</b>A few lines about your business is plenty.</li>
+        <li><b>We talk</b>A free call about who you want to reach.</li>
+        <li><b>You get a quote</b>In writing, before any work begins.</li>
+      </ol>
     </div>
+    <div class="form-card">
     <!-- Replace YOUR_FORM_ID with your Formspree form ID to receive messages by email -->
     <form id="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
@@ -24,9 +31,10 @@ description: Request a quote for a new website, redesign, or ongoing updates.
       </div>
       <div class="field full"><label for="site">Current website <span>(if you have one)</span></label><input id="site" name="current_site" type="url" placeholder="https://"></div>
       <div class="field full"><label for="msg">About your project</label><textarea id="msg" name="message" required></textarea></div>
-      <div class="field full"><button class="btn btn-solid" type="submit">Send message</button></div>
+      <div class="field full"><button class="btn btn-solid" type="submit">Send message<span class="arr" aria-hidden="true">→</span></button></div>
       <p class="form-status" id="form-status" role="status"></p>
     </form>
+    </div>
   </div>
 </section>
 
