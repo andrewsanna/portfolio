@@ -3,7 +3,6 @@
 {% for p in site.data.projects limit: max %}
 <article class="project">
   <header class="project-top">
-    <span class="project-no">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
     <span class="project-tag">{{ p.tag | escape }}</span>
     <a class="project-visit" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.link_text | escape }} <span aria-hidden="true">↗</span></a>
   </header>
@@ -17,6 +16,7 @@
     <div>
       <h3>{{ p.name | escape }}</h3>
       <p class="kind">{{ p.kind | escape }}</p>
+      {% if p.testimonial and p.testimonial.quote != "" %}{% include testimonial.html t=p.testimonial %}{% endif %}
     </div>
     <div>
       <p class="desc">{{ p.description | escape }}</p>

@@ -1,10 +1,13 @@
+{% assign contact = site.data.contact %}
 <section class="cta">
   <div class="wrap">
     <div class="cta-card">
-      <p class="label label-light">Next step</p>
-      <h2>Have a project <em>in mind?</em></h2>
+      <h2>Have a project <br><em>in mind?</em></h2>
       <p>Tell me a little about it and I'll set up a free call and send you a written quote.</p>
-      <a class="btn btn-tint" href="{{ '/contact.html' | relative_url }}">Request a quote<span class="arr" aria-hidden="true">→</span></a>
+      <div class="actions">
+        <a class="btn btn-tint" href="{{ '/contact.html' | relative_url }}">Request a quote<span class="arr" aria-hidden="true">→</span></a>
+        {% if contact.booking_url != "" %}<a class="btn btn-ghost" href="{{ contact.booking_url }}" target="_blank" rel="noopener">Book a free call</a>{% endif %}
+      </div>
     </div>
   </div>
 </section>

@@ -11,20 +11,14 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
 // Fade sections in as they scroll into view
 (function () {
-  var targets = document.querySelectorAll('.page-head, .sec-head, .project, .plan, .note, .steps li, .principles > div, .tile, .big-quote, .about, .contact, .cta-card, .meta');
+  var targets = document.querySelectorAll('.sec-head, .project, .cta-card');
 
   if (reduceMotion || !('IntersectionObserver' in window)) {
     targets.forEach(function (el) { el.classList.add('in'); });
     return;
   }
 
-  targets.forEach(function (el) {
-    el.setAttribute('data-reveal', '');
-    // Stagger items that sit side by side (pricing cards, steps, tiles)
-    var siblings = el.parentElement.querySelectorAll(':scope > .plan, :scope > li, :scope > .tile, :scope > div');
-    var i = Array.prototype.indexOf.call(siblings, el);
-    if (i > 0 && !el.classList.contains('project')) el.style.transitionDelay = (i * 0.1) + 's';
-  });
+  targets.forEach(function (el) { el.setAttribute('data-reveal', ''); });
 
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -38,13 +32,13 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   targets.forEach(function (el) { io.observe(el); });
 })();
 
-// Headlines rise in word by word, keeping italic accent words
+// The Home headline rises in word by word, keeping its italic accent words
 (function () {
   if (reduceMotion) return;
 
   var esc = function (w) { return w.replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
 
-  document.querySelectorAll('.hero h1, .sec-head h2, .page-head h1, .about h1, .contact h1, .cta-card h2, .big-quote').forEach(function (el) {
+  document.querySelectorAll('.hero h1').forEach(function (el) {
     var n = 0, html = [];
     el.setAttribute('aria-label', el.textContent.trim());
     el.childNodes.forEach(function (node) {
@@ -63,23 +57,5 @@ var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
   var hero = document.querySelector('.hero');
   if (hero) requestAnimationFrame(function () {
     requestAnimationFrame(function () { hero.classList.add('in'); });
-  });
-})();
-
-// Home screenshots drift gently with the pointer
-(function () {
-  var collage = document.querySelector('.collage');
-  if (!collage || reduceMotion || !window.matchMedia('(hover: hover)').matches) return;
-  var hero = document.querySelector('.hero');
-  hero.addEventListener('pointermove', function (e) {
-    var r = hero.getBoundingClientRect();
-    var x = (e.clientX - r.left) / r.width - 0.5;
-    var y = (e.clientY - r.top) / r.height - 0.5;
-    collage.style.setProperty('--px', x.toFixed(3));
-    collage.style.setProperty('--py', y.toFixed(3));
-  });
-  hero.addEventListener('pointerleave', function () {
-    collage.style.setProperty('--px', 0);
-    collage.style.setProperty('--py', 0);
   });
 })();

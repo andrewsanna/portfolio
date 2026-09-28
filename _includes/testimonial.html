@@ -1,0 +1,5 @@
+{% assign t = include.t %}
+<figure class="quote{% if include.large %} quote-large{% endif %}">
+  <blockquote><p>{{ t.quote | escape }}</p></blockquote>
+  <figcaption><b>{{ t.name | escape }}</b>{% if t.role %}<span>{{ t.role | escape }}</span>{% endif %}</figcaption>
+</figure>

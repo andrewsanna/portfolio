@@ -6,7 +6,6 @@ description: Request a quote for a new website, redesign, or ongoing updates.
 <section id="contact">
   <div class="wrap contact">
     <div class="contact-intro">
-      <p class="label">Contact</p>
       <h1>Tell me about <em>your project</em></h1>
       <p>Share a few details and I'll get back to you to set up a free call. No commitment and no pressure.</p>
       <ol class="next">
@@ -14,6 +13,14 @@ description: Request a quote for a new website, redesign, or ongoing updates.
         <li><b>We talk</b>A free call about who you want to reach.</li>
         <li><b>You get a quote</b>In writing, before any work begins.</li>
       </ol>
+      {% assign contact = site.data.contact %}
+      {% if contact.email != "" or contact.booking_url != "" %}
+      <div class="other-ways">
+        <p>Prefer not to use a form?</p>
+        {% if contact.email != "" %}<a class="link-arrow" href="mailto:{{ contact.email }}">Email {{ contact.email }}</a>{% endif %}
+        {% if contact.booking_url != "" %}<a class="link-arrow" href="{{ contact.booking_url }}" target="_blank" rel="noopener">Book a free call <span aria-hidden="true">↗</span></a>{% endif %}
+      </div>
+      {% endif %}
     </div>
     <div class="form-card">
     <!-- Replace YOUR_FORM_ID with your Formspree form ID to receive messages by email -->
