@@ -4,7 +4,7 @@ layout: default
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <p class="label"><span class="pulse" aria-hidden="true"></span>Independent web designer · Chicago area</p>
+      <p class="label"><span class="dot" aria-hidden="true"></span>Independent web designer · Chicago area</p>
       <h1>Websites built the way a <em>business owner</em> would build them.</h1>
       <p class="lede">I'm Anna. I run my own businesses too, so every site I make has one job: bring you the right people and make it easy for them to reach you.</p>
       <div class="actions">
@@ -26,15 +26,6 @@ layout: default
       </a>
     </div>
   </div>
-
-  <div class="wrap">
-    <dl class="meta">
-      <div><dt>Based in</dt><dd>Chicago area</dd></div>
-      <div><dt>Builds with</dt><dd>Custom code or Squarespace</dd></div>
-      <div><dt>Works with</dt><dd>Firms, small businesses, community groups</dd></div>
-      <div><dt>Starts with</dt><dd>A free call and a written quote</dd></div>
-    </dl>
-  </div>
 </section>
 
 <div class="marquee">
@@ -50,54 +41,38 @@ layout: default
 
 <section id="work">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="label">(01) Selected work</p>
-      <h2>Two recent <em>launches</em></h2>
-      <p>An executive search firm and a Greek Orthodox parish. Different audiences, different goals, and two websites that look nothing alike.</p>
+    <div class="sec-head sec-head-row">
+      <div>
+        <h2>Recent <em>work</em></h2>
+        <p>A site for an executive search firm, and a full design and build for a parish's upcoming website. Different audiences, different goals, and two sites that look nothing alike.</p>
+      </div>
+      <a class="link-arrow" href="{{ '/work.html' | relative_url }}">See all projects <span aria-hidden="true">→</span></a>
     </div>
 {% include projects.html limit=2 %}
-    <p class="more"><a class="btn btn-line" href="{{ '/work.html' | relative_url }}">See all four projects<span class="arr" aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
-<section class="statement">
+{% assign featured = nil %}
+{% for p in site.data.projects %}{% if featured == nil and p.testimonial and p.testimonial.quote != "" %}{% assign featured = p.testimonial %}{% endif %}{% endfor %}
+{% if featured %}
+<section class="home-quote">
   <div class="wrap">
-    <p class="label">(02) Approach</p>
-    <p class="big-quote">Your website should look like <em>your</em> business, not like mine.</p>
-    <div class="principles">
-      <div>
-        <span class="principle-no">i.</span>
-        <h3>I think like an owner</h3>
-        <p>I run The Reset Co., a home organizing business, so I know a website has to bring in real work, not just look nice.</p>
-      </div>
-      <div>
-        <span class="principle-no">ii.</span>
-        <h3>One clear next step</h3>
-        <p>Every page points somewhere: book a call, make a donation, start a search, sign up for the reunion.</p>
-      </div>
-      <div>
-        <span class="principle-no">iii.</span>
-        <h3>Built to fit you</h3>
-        <p>Custom-coded when you want something distinctive, Squarespace when your team wants to make edits themselves.</p>
-      </div>
-    </div>
+    {% include testimonial.html t=featured large=true %}
   </div>
 </section>
+{% endif %}
 
 <section class="svc-teaser">
   <div class="wrap">
     <div class="sec-head sec-head-row">
-      <div>
-        <p class="label">(03) Services</p>
-        <h2>What I can <em>do for you</em></h2>
-      </div>
+      <h2>What I can <em>do for you</em></h2>
       <a class="link-arrow" href="{{ '/services.html' | relative_url }}">Services and pricing <span aria-hidden="true">→</span></a>
     </div>
-    <div class="tiles">
-      <a class="tile" href="{{ '/services.html' | relative_url }}"><span class="tile-no">01</span><h3>New website</h3><p>Designed and built from scratch, launched on your own domain.</p><span class="tile-arr" aria-hidden="true">↗</span></a>
-      <a class="tile" href="{{ '/services.html' | relative_url }}"><span class="tile-no">02</span><h3>Redesign</h3><p>Keep your content and domain, and get a site that looks current.</p><span class="tile-arr" aria-hidden="true">↗</span></a>
-      <a class="tile" href="{{ '/services.html' | relative_url }}"><span class="tile-no">03</span><h3>Updates and care</h3><p>Edits, new pages, and seasonal changes, so your site never goes stale.</p><span class="tile-arr" aria-hidden="true">↗</span></a>
-    </div>
+    <ul class="svc-lines">
+      <li><a href="{{ '/services.html' | relative_url }}"><h3>New website</h3><p>Designed and built from scratch, launched on your own domain.</p><span class="svc-arr" aria-hidden="true">→</span></a></li>
+      <li><a href="{{ '/services.html' | relative_url }}"><h3>Redesign</h3><p>Keep your content and domain, and get a site that looks current.</p><span class="svc-arr" aria-hidden="true">→</span></a></li>
+      <li><a href="{{ '/services.html' | relative_url }}"><h3>Updates and care</h3><p>Edits, new pages, and seasonal changes, so your site never goes stale.</p><span class="svc-arr" aria-hidden="true">→</span></a></li>
+    </ul>
   </div>
 </section>
 
