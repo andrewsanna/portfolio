@@ -2,7 +2,7 @@
   --bg:#FCFAFB; --surface:#F7F0F3; --ink:#232226; --muted:#66616A;
   --line:#EADFE4; --accent:#232226; --accent-ink:#FFFFFF; --tint:#F6DDE6;
   --blush:#EFB8CB; --blush-deep:#B23A6B;
-  --display:"Gloock", Georgia, "Times New Roman", serif;
+  --display:"Newsreader", Georgia, "Times New Roman", serif;
   --body:"Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   box-sizing:border-box;
   padding-top:env(safe-area-inset-top,0px);
@@ -39,7 +39,7 @@ a{color:inherit}
 
 /* Hero */
 .hero{padding:clamp(4rem,11vw,8.5rem) 0 clamp(3.5rem,8vw,6rem)}
-.hero h1{font-family:var(--display); font-weight:400; font-size:clamp(2.7rem,5.6vw + 1rem,5.8rem); line-height:1.02; letter-spacing:-.015em; margin:0; max-width:13ch}
+.hero h1{font-family:var(--display); font-weight:400; font-size:clamp(2.7rem,5.6vw + 1rem,5.8rem); line-height:1.08; letter-spacing:-.015em; margin:0; max-width:13ch}
 .hero .lede{font-size:clamp(1.1rem,1vw + .8rem,1.3rem); color:var(--muted); max-width:36em; margin:2rem 0 2.5rem}
 .hero .actions{display:flex; flex-wrap:wrap; gap:.75rem}
 @media (prefers-reduced-motion:no-preference){
