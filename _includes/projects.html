@@ -2,10 +2,6 @@
 <div class="projects">
 {% for p in site.data.projects limit: max %}
 <article class="project">
-  <header class="project-top">
-    <span class="project-tag">{{ p.tag | escape }}</span>
-    <a class="project-visit" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.link_text | escape }} <span aria-hidden="true">↗</span></a>
-  </header>
   <a class="project-mat" href="{{ p.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
     <div class="browser">
       <div class="bar"><i></i><i></i><i></i><span>{{ p.url_label | escape }}</span></div>
@@ -13,19 +9,24 @@
     </div>
   </a>
   <div class="project-body">
-    <div>
-      <h3>{{ p.name | escape }}</h3>
-      <p class="kind">{{ p.kind | escape }}</p>
-      {% if p.testimonial and p.testimonial.quote != "" %}{% include testimonial.html t=p.testimonial %}{% endif %}
+    <div class="project-head">
+      <p class="project-tag">{{ p.tag | escape }}</p>
+      <a class="project-visit" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.link_text | escape }} <span aria-hidden="true">↗</span></a>
     </div>
-    <div>
-      <p class="desc">{{ p.description | escape }}</p>
-      <dl class="spec">
-        <div><dt>Built with</dt><dd>{{ p.facts | first | escape }}</dd></div>
-        <div><dt>Features</dt><dd>{% for f in p.facts offset: 1 %}{{ f | escape }}{% unless forloop.last %} · {% endunless %}{% endfor %}</dd></div>
-        {% if p.palette %}<div><dt>Palette</dt><dd class="swatches">{% for c in p.palette %}<span style="--c:{{ c }}" title="{{ c }}"></span>{% endfor %}</dd></div>{% endif %}
-      </dl>
-    </div>
+    <h3>{{ p.name | escape }}</h3>
+    <p class="kind">{{ p.kind | escape }}</p>
+    <details class="project-more">
+      <summary><span class="more-open">More details</span><span class="more-close">Fewer details</span><span class="more-icon" aria-hidden="true"></span></summary>
+      <div class="project-detail">
+        <p class="desc">{{ p.description | escape }}</p>
+        <dl class="spec">
+          <div><dt>Built with</dt><dd>{{ p.facts | first | escape }}</dd></div>
+          <div><dt>Features</dt><dd>{% for f in p.facts offset: 1 %}{{ f | escape }}{% unless forloop.last %} · {% endunless %}{% endfor %}</dd></div>
+          {% if p.palette %}<div><dt>Palette</dt><dd class="swatches">{% for c in p.palette %}<span style="--c:{{ c }}" title="{{ c }}"></span>{% endfor %}</dd></div>{% endif %}
+        </dl>
+        {% if p.testimonial and p.testimonial.quote != "" %}{% include testimonial.html t=p.testimonial %}{% endif %}
+      </div>
+    </details>
   </div>
 </article>
 {% endfor %}
