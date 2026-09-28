@@ -1,0 +1,51 @@
+---
+layout: default
+title: Contact
+description: Request a quote for a new website, redesign, or ongoing updates.
+---
+<section id="contact">
+  <div class="wrap contact">
+    <div class="sec-head">
+      <h1>Tell me about your project</h1>
+      <p>Share a few details and I'll get back to you to set up a free call. No commitment and no pressure.</p>
+    </div>
+    <!-- Replace YOUR_FORM_ID with your Formspree form ID to receive messages by email -->
+    <form id="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="field"><label for="name">Name</label><input id="name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="org">Business or organization</label><input id="org" name="organization" autocomplete="organization"></div>
+      <div class="field"><label for="need">What do you need?</label>
+        <select id="need" name="service">
+          <option>New website</option>
+          <option>Redesign</option>
+          <option>Updates and care</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div class="field full"><label for="site">Current website <span>(if you have one)</span></label><input id="site" name="current_site" type="url" placeholder="https://"></div>
+      <div class="field full"><label for="msg">About your project</label><textarea id="msg" name="message" required></textarea></div>
+      <div class="field full"><button class="btn btn-solid" type="submit">Send message</button></div>
+      <p class="form-status" id="form-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<script>
+const form = document.getElementById('quote-form');
+const statusEl = document.getElementById('form-status');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (form.action.includes('YOUR_FORM_ID')) {
+    statusEl.textContent = "This form isn't connected yet. Add your Formspree form ID to start receiving messages.";
+    return;
+  }
+  statusEl.textContent = 'Sending...';
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    if (res.ok) { form.reset(); statusEl.textContent = "Message sent. I'll be in touch soon."; }
+    else { statusEl.textContent = "Your message didn't send. Check your email address and try again."; }
+  } catch (err) {
+    statusEl.textContent = "Your message didn't send. Check your connection and try again.";
+  }
+});
+</script>

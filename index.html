@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div class="wrap hero">
+  <h1>Websites built the way a business owner would build them.</h1>
+  <p class="lede">I'm Anna, a web designer in the Chicago area. I run my own businesses too, so every site I make has one job: bring you the right people and make it easy for them to reach you.</p>
+  <div class="actions">
+    <a class="btn btn-solid" href="{{ '/contact.html' | relative_url }}">Request a quote</a>
+    <a class="btn btn-line" href="{{ '/work.html' | relative_url }}">See my work</a>
+  </div>
+  <p class="clients">Recent work for <strong>Aureus Partners</strong>, <strong>The Reset Co.</strong>, <strong>Saints Peter &amp; Paul Greek Orthodox Church</strong>, and the <strong>Armstrong High School Class of 1982</strong>.</p>
+</div>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Recent work</h2>
+      <p>Your website should look like your business, not like mine. Here are two recent examples.</p>
+    </div>
+{% include projects/aureus.html %}
+{% include projects/reset.html %}
+    <p class="more"><a class="btn btn-line" href="{{ '/work.html' | relative_url }}">See all my work</a></p>
+  </div>
+</section>
+
+{% include cta.html %}
