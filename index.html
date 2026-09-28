@@ -3,6 +3,7 @@ layout: default
 ---
 <div class="wrap hero">
   <h1>Websites built the way a business owner would build them.</h1>
+    <p class="rotator">Designed for <span class="rotator-word" data-words="executive search firms|home organizers|churches|class reunions|your business">executive search firms</span></p>
   <p class="lede">I'm Anna, a web designer in the Chicago area. I run my own businesses too, so every site I make has one job: bring you the right people and make it easy for them to reach you.</p>
   <div class="actions">
     <a class="btn btn-solid" href="{{ '/contact.html' | relative_url }}">Request a quote</a>
@@ -17,8 +18,7 @@ layout: default
       <h2>Recent work</h2>
       <p>Your website should look like your business, not like mine. Here are two recent examples.</p>
     </div>
-{% include projects/aureus.html %}
-{% include projects/reset.html %}
+{% include projects.html limit=2 %}
     <p class="more"><a class="btn btn-line" href="{{ '/work.html' | relative_url }}">See all my work</a></p>
   </div>
 </section>
