@@ -1,0 +1,36 @@
+- name: Aureus Partners
+  kind: Executive search firm for private equity
+  url: https://www.aureuspartners.us
+  url_label: aureuspartners.us
+  link_text: Visit aureuspartners.us
+  image: /assets/img/aureus.png
+  description: "A one-page site for a firm that places senior leaders at private equity portfolio companies. The audience is busy fund partners, so the design is polished, confident, and quick to scan, and the contact form sorts each inquiry by the type of search."
+  facts: [Custom-coded, Contact form, Mobile-ready]
+
+- name: The Reset Co.
+  kind: Home organizing business in Chicago
+  url: https://www.theresetco.us
+  url_label: theresetco.us
+  link_text: Visit theresetco.us
+  image: /assets/img/reset.png
+  description: "A multi-page site with service pages, a blog, a newsletter signup, and online booking for free consultations. Clients are inviting a stranger into their home, so the tone is calm, personal, and trustworthy from the first screen."
+  facts: [Custom-coded, Online booking, Blog, Newsletter signup]
+
+- name: Saints Peter & Paul Greek Orthodox Church
+  kind: Parish website in Glenview, Illinois
+  url: https://andrewsanna.github.io/sspp
+  url_label: Saints Peter & Paul, Glenview
+  link_text: View the site
+  image: /assets/img/sspp.png
+  description: "A full website for a busy parish: an events calendar that updates itself from Google Calendar, a directory of 33 ministries, online giving and event registration, and seasonal pages for Pascha and the Greek festival."
+  facts: [Custom-coded, Live calendar, Online giving, Registrations]
+
+- name: Armstrong High School Class of 1982
+  kind: Class reunion website
+  url: https://armstrongclassof1982.squarespace.com/
+  url_label: armstrongclassof1982.squarespace.com
+  link_text: Visit the site
+  image: /assets/img/armstrong.png
+  short: true
+  description: "A site that helps a graduating class find each other again, with reunion details, a memorial page, a search for lost classmates, and an archive of scanned yearbooks and class newsletters. Built on Squarespace so the committee can make updates themselves."
+  facts: [Squarespace, Photo & yearbook archive, Donations]
