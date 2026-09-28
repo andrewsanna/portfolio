@@ -1,0 +1,16 @@
+{% assign max = include.limit | default: 99 %}
+{% for p in site.data.projects limit: max %}
+<article class="project">
+  <a class="frame" href="{{ p.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+    <div class="bar"><i></i><i></i><i></i><span>{{ p.url_label | escape }}</span></div>
+    <div class="screen shot{% if p.short %} shot-short{% endif %}"><img src="{{ p.image | relative_url }}" alt="" loading="lazy"></div>
+  </a>
+  <div>
+    <h3>{{ p.name | escape }}</h3>
+    <p class="kind">{{ p.kind | escape }}</p>
+    <p class="desc">{{ p.description | escape }}</p>
+    <ul class="facts">{% for f in p.facts %}<li>{{ f | escape }}</li>{% endfor %}</ul>
+    <a class="visit" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.link_text | escape }}</a>
+  </div>
+</article>
+{% endfor %}
