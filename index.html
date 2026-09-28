@@ -1,25 +1,103 @@
 ---
 layout: default
 ---
-<div class="wrap hero">
-  <h1>Websites built the way a business owner would build them.</h1>
-    <p class="rotator">Designed for <span class="rotator-word" data-words="executive search firms|home organizers|churches|class reunions|your business">executive search firms</span></p>
-  <p class="lede">I'm Anna, a web designer in the Chicago area. I run my own businesses too, so every site I make has one job: bring you the right people and make it easy for them to reach you.</p>
-  <div class="actions">
-    <a class="btn btn-solid" href="{{ '/contact.html' | relative_url }}">Request a quote</a>
-    <a class="btn btn-line" href="{{ '/work.html' | relative_url }}">See my work</a>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="label"><span class="pulse" aria-hidden="true"></span>Independent web designer · Chicago area</p>
+      <h1>Websites built the way a <em>business owner</em> would build them.</h1>
+      <p class="lede">I'm Anna. I run my own businesses too, so every site I make has one job: bring you the right people and make it easy for them to reach you.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="{{ '/contact.html' | relative_url }}">Request a quote<span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-line" href="{{ '/work.html' | relative_url }}">See my work</a>
+      </div>
+    </div>
+
+    <div class="collage" aria-hidden="true">
+      {% for p in site.data.projects limit: 2 %}
+      <div class="browser collage-{{ forloop.index }}">
+        <div class="bar"><i></i><i></i><i></i><span>{{ p.url_label | escape }}</span></div>
+        <div class="shot"><img src="{{ p.image | relative_url }}" alt="" width="1800" height="852"></div>
+      </div>
+      {% endfor %}
+      <a class="badge" href="{{ '/contact.html' | relative_url }}" tabindex="-1">
+        <svg viewBox="0 0 120 120"><defs><path id="badge-circle" d="M60 60 m-46 0 a46 46 0 1 1 92 0 a46 46 0 1 1 -92 0"/></defs><text><textPath href="#badge-circle">Free call · Written quote · No pressure ·</textPath></text></svg>
+        <span>→</span>
+      </a>
+    </div>
   </div>
-  <p class="clients">Recent work for <strong>Aureus Partners</strong>, <strong>The Reset Co.</strong>, <strong>Saints Peter &amp; Paul Greek Orthodox Church</strong>, and the <strong>Armstrong High School Class of 1982</strong>.</p>
+
+  <div class="wrap">
+    <dl class="meta">
+      <div><dt>Based in</dt><dd>Chicago area</dd></div>
+      <div><dt>Builds with</dt><dd>Custom code or Squarespace</dd></div>
+      <div><dt>Works with</dt><dd>Firms, small businesses, community groups</dd></div>
+      <div><dt>Starts with</dt><dd>A free call and a written quote</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    {% for n in (1..2) %}
+    <ul{% if n == 2 %} aria-hidden="true"{% endif %}>
+      {% for p in site.data.projects %}<li>{{ p.name | escape }}</li>{% endfor %}
+      {% for p in site.data.projects %}<li>{{ p.name | escape }}</li>{% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
 </div>
 
 <section id="work">
   <div class="wrap">
     <div class="sec-head">
-      <h2>Recent work</h2>
-      <p>Your website should look like your business, not like mine. Here are two recent examples.</p>
+      <p class="label">(01) Selected work</p>
+      <h2>Two recent <em>launches</em></h2>
+      <p>An executive search firm and a Greek Orthodox parish. Different audiences, different goals, and two websites that look nothing alike.</p>
     </div>
 {% include projects.html limit=2 %}
-    <p class="more"><a class="btn btn-line" href="{{ '/work.html' | relative_url }}">See all my work</a></p>
+    <p class="more"><a class="btn btn-line" href="{{ '/work.html' | relative_url }}">See all four projects<span class="arr" aria-hidden="true">→</span></a></p>
+  </div>
+</section>
+
+<section class="statement">
+  <div class="wrap">
+    <p class="label">(02) Approach</p>
+    <p class="big-quote">Your website should look like <em>your</em> business, not like mine.</p>
+    <div class="principles">
+      <div>
+        <span class="principle-no">i.</span>
+        <h3>I think like an owner</h3>
+        <p>I run The Reset Co., a home organizing business, so I know a website has to bring in real work, not just look nice.</p>
+      </div>
+      <div>
+        <span class="principle-no">ii.</span>
+        <h3>One clear next step</h3>
+        <p>Every page points somewhere: book a call, make a donation, start a search, sign up for the reunion.</p>
+      </div>
+      <div>
+        <span class="principle-no">iii.</span>
+        <h3>Built to fit you</h3>
+        <p>Custom-coded when you want something distinctive, Squarespace when your team wants to make edits themselves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="svc-teaser">
+  <div class="wrap">
+    <div class="sec-head sec-head-row">
+      <div>
+        <p class="label">(03) Services</p>
+        <h2>What I can <em>do for you</em></h2>
+      </div>
+      <a class="link-arrow" href="{{ '/services.html' | relative_url }}">Services and pricing <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="tiles">
+      <a class="tile" href="{{ '/services.html' | relative_url }}"><span class="tile-no">01</span><h3>New website</h3><p>Designed and built from scratch, launched on your own domain.</p><span class="tile-arr" aria-hidden="true">↗</span></a>
+      <a class="tile" href="{{ '/services.html' | relative_url }}"><span class="tile-no">02</span><h3>Redesign</h3><p>Keep your content and domain, and get a site that looks current.</p><span class="tile-arr" aria-hidden="true">↗</span></a>
+      <a class="tile" href="{{ '/services.html' | relative_url }}"><span class="tile-no">03</span><h3>Updates and care</h3><p>Edits, new pages, and seasonal changes, so your site never goes stale.</p><span class="tile-arr" aria-hidden="true">↗</span></a>
+    </div>
   </div>
 </section>
 

@@ -1,16 +1,32 @@
 {% assign max = include.limit | default: 99 %}
+<div class="projects">
 {% for p in site.data.projects limit: max %}
 <article class="project">
-  <a class="frame" href="{{ p.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-    <div class="bar"><i></i><i></i><i></i><span>{{ p.url_label | escape }}</span></div>
-    <div class="screen shot{% if p.short %} shot-short{% endif %}"><img src="{{ p.image | relative_url }}" alt="" loading="lazy"></div>
+  <header class="project-top">
+    <span class="project-no">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+    <span class="project-tag">{{ p.tag | escape }}</span>
+    <a class="project-visit" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.link_text | escape }} <span aria-hidden="true">↗</span></a>
+  </header>
+  <a class="project-mat" href="{{ p.url }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+    <div class="browser">
+      <div class="bar"><i></i><i></i><i></i><span>{{ p.url_label | escape }}</span></div>
+      <div class="shot{% if p.short %} shot-short{% endif %}"><img src="{{ p.image | relative_url }}" alt="" loading="lazy" width="1800" height="852"></div>
+    </div>
   </a>
-  <div>
-    <h3>{{ p.name | escape }}</h3>
-    <p class="kind">{{ p.kind | escape }}</p>
-    <p class="desc">{{ p.description | escape }}</p>
-    <ul class="facts">{% for f in p.facts %}<li>{{ f | escape }}</li>{% endfor %}</ul>
-    <a class="visit" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.link_text | escape }}</a>
+  <div class="project-body">
+    <div>
+      <h3>{{ p.name | escape }}</h3>
+      <p class="kind">{{ p.kind | escape }}</p>
+    </div>
+    <div>
+      <p class="desc">{{ p.description | escape }}</p>
+      <dl class="spec">
+        <div><dt>Built with</dt><dd>{{ p.facts | first | escape }}</dd></div>
+        <div><dt>Features</dt><dd>{% for f in p.facts offset: 1 %}{{ f | escape }}{% unless forloop.last %} · {% endunless %}{% endfor %}</dd></div>
+        {% if p.palette %}<div><dt>Palette</dt><dd class="swatches">{% for c in p.palette %}<span style="--c:{{ c }}" title="{{ c }}"></span>{% endfor %}</dd></div>{% endif %}
+      </dl>
+    </div>
   </div>
 </article>
 {% endfor %}
+</div>

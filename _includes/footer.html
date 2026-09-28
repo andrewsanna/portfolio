@@ -1,6 +1,28 @@
-<footer>
+<footer class="site-footer">
   <div class="wrap">
-    <span>© {{ 'now' | date: '%Y' }} Anna Andrews</span>
-    <span>Web design in the Chicago area</span>
+    <div class="foot-grid">
+      <div>
+        <p class="label">Say hello</p>
+        <p class="foot-line">Ready when you are. Every project starts with a free call.</p>
+        <a class="link-arrow" href="{{ '/contact.html' | relative_url }}">Request a quote <span aria-hidden="true">→</span></a>
+      </div>
+      <nav aria-label="Footer">
+        <p class="label">Pages</p>
+        <a href="{{ '/work.html' | relative_url }}">Work</a>
+        <a href="{{ '/services.html' | relative_url }}">Services</a>
+        <a href="{{ '/about.html' | relative_url }}">About</a>
+        <a href="{{ '/contact.html' | relative_url }}">Contact</a>
+      </nav>
+      <div>
+        <p class="label">Recent clients</p>
+        {% for p in site.data.projects %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name | escape }}</a>{% endfor %}
+      </div>
+    </div>
+    <p class="foot-mark" aria-hidden="true">Anna <em>Andrews</em></p>
+    <div class="foot-base">
+      <span>© {{ 'now' | date: '%Y' }} Anna Andrews</span>
+      <span>Designed and built by hand in the Chicago area</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
   </div>
 </footer>
