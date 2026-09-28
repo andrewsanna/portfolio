@@ -47,7 +47,6 @@
   url_label: armstrongclassof1982.squarespace.com
   link_text: Visit the site
   image: /assets/img/armstrong.jpg
-  short: true
   description: "A site that helps a graduating class find each other again, with reunion details, a memorial page, a search for lost classmates, and an archive of scanned yearbooks and class newsletters. Built on Squarespace so the committee can make updates themselves."
   facts: [Squarespace, Photo & yearbook archive, Donations]
   palette: ["#0D2762", "#C93930", "#FFFFFF"]
