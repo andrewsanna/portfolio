@@ -13,7 +13,7 @@ layout: default
     </div>
 
     <div class="collage" aria-hidden="true">
-      {% for p in site.data.projects offset: 2 limit: 2 %}
+      {% for p in site.data.projects limit: 2 %}
       <div class="browser collage-{{ forloop.index }}">
         <div class="bar"><i></i><i></i><i></i><span>{{ p.url_label | escape }}</span></div>
         <div class="shot"><img src="{{ p.image | relative_url }}" alt="" width="1800" height="852"></div>
