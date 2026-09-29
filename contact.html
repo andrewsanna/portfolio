@@ -7,7 +7,7 @@ description: Request a quote for a new website, redesign, or ongoing updates.
   <div class="wrap contact">
     <div class="contact-intro">
       <h1>Tell me about <em>your project</em></h1>
-      <p>Share a few details and I'll get back to you to set up a free call. No commitment and no pressure.</p>
+      <p>Share a few details and I'll get back to you within two business days to set up a free call. No commitment, no pressure.</p>
       <ol class="next">
         <li><b>You send a note</b>A few lines about your business is plenty.</li>
         <li><b>We talk</b>A free call about who you want to reach.</li>
@@ -57,7 +57,7 @@ form.addEventListener('submit', async (e) => {
   statusEl.textContent = 'Sending...';
   try {
     const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-    if (res.ok) { form.reset(); statusEl.textContent = "Message sent. I'll be in touch soon."; }
+    if (res.ok) { form.reset(); statusEl.textContent = "Message sent. I'll get back to you within two business days."; }
     else { statusEl.textContent = "Your message didn't send. Check your email address and try again."; }
   } catch (err) {
     statusEl.textContent = "Your message didn't send. Check your connection and try again.";
