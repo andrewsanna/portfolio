@@ -19,13 +19,13 @@
   palette: ["#1E1D1B", "#AB8544", "#FFFFFF"]
 
 - name: Saints Peter & Paul Greek Orthodox Church
-  kind: Full site design and build for the parish's upcoming website
+  kind: Full site design and build for a parish in Glenview, Illinois
   tag: Parish
   url: https://andrewsanna.github.io/sspp
   url_label: Saints Peter & Paul, Glenview
   link_text: Preview the design
   image: /assets/img/sspp.jpg
-  description: "A complete, working website designed and built for a busy parish in Glenview, Illinois, ahead of its upcoming relaunch: an events calendar that updates itself from Google Calendar, a directory of 33 ministries, online giving and event registration, and seasonal pages for Pascha and the Greek festival."
+  description: "A complete, working website designed and built for a busy parish as it plans its new site: an events calendar that updates itself from Google Calendar, a directory of 33 ministries, online giving and event registration, and seasonal pages for Pascha and the Greek festival."
   facts: [Custom-coded, Live calendar, Online giving, Registrations]
   palette: ["#17273E", "#CEB175", "#FFFFFF"]
 
@@ -36,7 +36,7 @@
   url_label: theresetco.us
   link_text: Visit theresetco.us
   image: /assets/img/reset.jpg
-  description: "I run The Reset Co., so this is the site I built for my own business: service pages, a blog, a newsletter signup, and online booking for free consultations. Clients are inviting a stranger into their home, so the tone is calm, personal, and trustworthy from the first screen."
+  description: "Service pages, a blog, a newsletter signup, and online booking for free consultations. Clients are inviting a stranger into their home, so the tone is calm, personal, and trustworthy from the first screen."
   facts: [Custom-coded, Online booking, Blog, Newsletter signup]
   palette: ["#6F7863", "#A68167", "#E6DDCE"]
 
@@ -47,7 +47,6 @@
   url_label: armstrongclassof1982.squarespace.com
   link_text: Visit the site
   image: /assets/img/armstrong.jpg
-  short: true
   description: "A site that helps a graduating class find each other again, with reunion details, a memorial page, a search for lost classmates, and an archive of scanned yearbooks and class newsletters. Built on Squarespace so the committee can make updates themselves."
   facts: [Squarespace, Photo & yearbook archive, Donations]
   palette: ["#0D2762", "#C93930", "#FFFFFF"]
