@@ -17,6 +17,11 @@
   description: "A one-page site for a firm that places senior leaders at private equity portfolio companies. The audience is busy fund partners, so the design is polished, confident, and quick to scan, and the contact form sorts each inquiry by the type of search."
   facts: [Custom-coded, Contact form, Mobile-ready]
   palette: ["#1E1D1B", "#AB8544", "#FFFFFF"]
+  # DRAFT: remove the # marks below once Aureus approves this wording and you know who to credit.
+  # testimonial:
+  #   quote: "Anna understood right away that our audience is busy fund partners. The site looks polished, gets to the point, and sends inquiries to us already sorted. It's exactly how we want the firm to come across."
+  #   name: Their name
+  #   role: Their title, Aureus Partners
 
 - name: Saints Peter & Paul Greek Orthodox Church
   kind: Full site design and build for a parish in Glenview, Illinois
@@ -28,6 +33,12 @@
   description: "A complete, working website designed and built for a busy parish as it plans its new site: an events calendar that updates itself from Google Calendar, a directory of 33 ministries, online giving and event registration, and seasonal pages for Pascha and the Greek festival."
   facts: [Custom-coded, Live calendar, Online giving, Registrations]
   palette: ["#17273E", "#CEB175", "#FFFFFF"]
+  # DRAFT: remove the # marks below once the parish approves this wording and you know who to credit.
+  # Note: this draft describes the site as in use, but the parish hasn't chosen its new site yet.
+  # testimonial:
+  #   quote: "Anna built a website that finally works the way our parish does. The calendar keeps itself up to date, members can give and register online, and newcomers can find everything they need. She was a joy to work with from start to finish."
+  #   name: Their name
+  #   role: Their role, Saints Peter & Paul
 
 - name: The Reset Co.
   kind: My own home organizing business in Chicago
@@ -50,3 +61,8 @@
   description: "A site that helps a graduating class find each other again, with reunion details, a memorial page, a search for lost classmates, and an archive of scanned yearbooks and class newsletters. Built on Squarespace so the committee can make updates themselves."
   facts: [Squarespace, Photo & yearbook archive, Donations]
   palette: ["#0D2762", "#C93930", "#FFFFFF"]
+  # DRAFT: remove the # marks below once the committee approves this wording and you know who to credit.
+  # testimonial:
+  #   quote: "Anna gave our class a place to reconnect. Classmates are finding each other again, the yearbooks and newsletters are all in one spot, and our committee can update the site ourselves."
+  #   name: Their name
+  #   role: Reunion committee, Armstrong Class of 1982

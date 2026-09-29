@@ -1,3 +1,4 @@
 # Other ways to reach Anna. Each one stays hidden on the site until it's filled in.
 email: ""        # e.g. hello@example.com — shown in the footer and on the Contact page
-booking_url: ""  # link to a scheduling page — adds a "Book a free call" link
+booking_url: "https://calendly.com/andrews-anna95/website-consultation"  # adds "Book a free call" links
+booking_note: "Now booking website projects for early 2027"  # the bar across the top of every page; set to "" to hide it

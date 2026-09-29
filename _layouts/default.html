@@ -16,6 +16,10 @@
 <body>
 <a class="skip" href="#top">Skip to content</a>
 <div class="frame-edge" aria-hidden="true"></div>
+{% assign contact = site.data.contact %}
+{% if contact.booking_note != "" and contact.booking_url != "" %}
+<p class="booking-bar">{{ contact.booking_note | escape }} <span aria-hidden="true">·</span> <a href="{{ contact.booking_url }}" target="_blank" rel="noopener">Book a free call <span aria-hidden="true">↗</span></a></p>
+{% endif %}
 {% include nav.html %}
 <main id="top">
 {{ content }}

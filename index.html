@@ -51,6 +51,19 @@ layout: default
   </div>
 </section>
 
+<section class="meet">
+  <div class="wrap">
+    <div class="meet-card">
+      <img src="{{ '/assets/img/headshot-wide.jpg' | relative_url }}" alt="Anna Andrews seated in a green armchair in a bright studio" width="1600" height="1066" loading="lazy">
+      <div class="meet-copy">
+        <h2>A place for what you've built to <em>come to life.</em></h2>
+        <p>I started in tech with a computer science degree, spent years in real estate development, and built a Greek dance program, a festival revival, and a business of my own along the way. Now I build websites for people who have something great to offer.</p>
+        <a class="link-arrow" href="{{ '/about.html' | relative_url }}">Read my story <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% assign featured = nil %}
 {% for p in site.data.projects %}{% if featured == nil and p.testimonial and p.testimonial.quote != "" %}{% assign featured = p.testimonial %}{% endif %}{% endfor %}
 {% if featured %}
