@@ -13,7 +13,7 @@ layout: default
     </div>
 
     <div class="collage" aria-hidden="true">
-      {% for p in site.data.projects limit: 2 %}
+      {% for p in site.data.projects offset: 2 limit: 2 %}
       <div class="browser collage-{{ forloop.index }}">
         <div class="bar"><i></i><i></i><i></i><span>{{ p.url_label | escape }}</span></div>
         <div class="shot"><img src="{{ p.image | relative_url }}" alt="" width="1800" height="852"></div>
@@ -38,7 +38,13 @@ layout: default
   </div>
 </div>
 
-<section id="work">
+<section class="statement">
+  <div class="wrap">
+    <p>I love creating something where there was <em>nothing before.</em></p>
+  </div>
+</section>
+
+<section id="work" class="work-spread">
   <div class="wrap">
     <div class="sec-head sec-head-row">
       <div>
@@ -54,7 +60,7 @@ layout: default
 <section class="meet">
   <div class="wrap">
     <div class="meet-card">
-      <img src="{{ '/assets/img/headshot-wide.jpg' | relative_url }}" alt="Anna Andrews seated in a green armchair in a bright studio" width="1600" height="1066" loading="lazy">
+      <img src="{{ '/assets/img/headshot-wide.jpg' | relative_url }}" alt="Anna Andrews seated in a green armchair in a bright studio" width="1600" height="1155" loading="lazy">
       <div class="meet-copy">
         <h2>A place for what you've built to <em>come to life.</em></h2>
         <p>I started in tech with a computer science degree, spent years in real estate development, and built a Greek dance program, a festival revival, and a business of my own along the way. Now I build websites for people who have something great to offer.</p>
@@ -74,7 +80,7 @@ layout: default
 </section>
 {% endif %}
 
-<section class="svc-teaser">
+<section class="svc-teaser svc-split">
   <div class="wrap">
     <div class="sec-head sec-head-row">
       <h2>What I can <em>do for you</em></h2>

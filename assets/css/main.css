@@ -181,7 +181,7 @@ section{padding:clamp(4.5rem,10vw,8rem) 0}
 .meet h2{font-size:clamp(2rem,2.6vw + 1rem,3rem); line-height:1.1; letter-spacing:-.02em; margin:0 0 1rem}
 .meet p{color:var(--muted); margin:0 0 1.5rem; max-width:32em}
 @media (max-width:900px){
-  .meet-card img{aspect-ratio:7/10; object-fit:cover; object-position:86% center}
+  .meet-card img{aspect-ratio:7/10; object-fit:cover; object-position:100% center}
   .meet-copy{position:static; width:auto}
 }
 
@@ -344,4 +344,30 @@ textarea{min-height:150px; resize:vertical}
   .js [data-reveal]{opacity:1; transform:none}
   .project-mat .browser{transform:none}
   .project:hover .project-mat .shot img{transform:none}
+}
+
+/* Editorial statement */
+.statement{padding:clamp(4rem,10vw,8rem) 0}
+.statement p{font-family:var(--display); font-size:clamp(2.2rem,5vw + .5rem,5rem); line-height:1.05; letter-spacing:-.02em; max-width:17ch; margin:0 0 0 auto; text-align:right}
+
+/* Recent work: one large card, one smaller card set lower */
+.work-spread .projects{grid-template-columns:minmax(0,7fr) minmax(0,5fr); grid-auto-rows:auto; align-items:start}
+.work-spread .project:nth-child(2){margin-top:clamp(3rem,8vw,7rem)}
+
+/* Meet Anna runs edge to edge */
+.meet .wrap{max-width:none; padding:0}
+@media (min-width:901px){ .meet-copy{padding-left:max(clamp(1.25rem,4vw,3rem), calc((100% - 1240px) / 2 + clamp(1.25rem,4vw,3rem)))} }
+.meet-card{border-radius:0; border-left:0; border-right:0}
+
+/* Services: heading pinned on the left, list on the right */
+.svc-split .wrap{display:grid; grid-template-columns:minmax(0,4fr) minmax(0,7fr); gap:clamp(2rem,5vw,5rem); align-items:start}
+.svc-split .sec-head{position:sticky; top:110px; margin:0}
+
+@media (min-width:861px){
+  .meet-card img{aspect-ratio:21/9; object-fit:cover; object-position:60% 20%}
+}
+@media (max-width:860px){
+  .work-spread .projects,.svc-split .wrap{grid-template-columns:1fr}
+  .work-spread .project:nth-child(2){margin-top:0}
+  .svc-split .sec-head{position:static}
 }
